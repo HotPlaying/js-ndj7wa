@@ -1,0 +1,43 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+.css-vdxpmq {
+  font-family: var(--chakra-fonts-body);
+  margin-top: 5rem;
+  padding: 3rem;
+  border-width: 1px;
+  border-radius: 12px;
+  overflow-x: auto;
+  z-index: 1;
+}
+.css-8g8ihq {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.css-1f4k6sh {
+  --skeleton-start-color: rgb(237 242 247);
+  --skeleton-end-color: rgb(160 174 192);
+  opacity: 0.7;
+  box-shadow: none;
+  background-clip: padding-box;
+  cursor: default;
+  color: rgb(160 174 192);
+  pointer-events: none;
+  user-select: none;
+  height: 20px;
+  border-color: rgb(160 174 192);
+  animation: 0.8s linear 0s infinite alternate none running animation-14pkoxc;
+}
+@keyframes animation-14pkoxc {
+  0% {
+    border-color: var(--skeleton-start-color);
+    background: var(--skeleton-start-color);
+  }
+  100% {
+    border-color: var(--skeleton-end-color);
+    background: var(--skeleton-end-color);
+  }
+}
