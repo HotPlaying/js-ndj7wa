@@ -1,9 +1,3139 @@
-<div id="app">
-  <div class="css-vdxpmq">
-    <div class="css-8g8ihq">
-      <div class="css-1f4k6sh"></div>
-      <div class="css-1f4k6sh"></div>
-      <div class="css-1f4k6sh"></div>
+<html lang="en" data-theme="light" style="color-scheme: light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="/manifest.json" />
+  <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/combine/npm/ag-grid-community@30/styles/ag-grid.min.css,npm/ag-grid-community@30/styles/ag-theme-balham.min.css"
+  />
+  <title></title>
+  <script defer="" src="/static/js/bundle.js"></script>
+  <style data-emotion="css-global" data-s="">
+      ::-webkit-scrollbar {
+          width: 8px;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      ::-webkit-scrollbar:horizontal {
+          height: 10px;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      ::-webkit-scrollbar-track,
+      ::-webkit-scrollbar-track:horizontal {
+          background-color: var(--chakra-colors-gray-200);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      ::-webkit-scrollbar-thumb,
+      ::-webkit-scrollbar-thumb:horizontal {
+          background-color: var(--chakra-colors-gray-300);
+          min-height: 40px;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      ::-webkit-scrollbar-thumb:hover,
+      ::-webkit-scrollbar-thumb:horizontal:hover {
+          background-color: var(--chakra-colors-gray-400);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :host,
+      :root,
+      [data-theme] {
+          --chakra-ring-inset: var(--chakra-empty, /*!*/ /*!*/);
+          --chakra-ring-offset-width: 0px;
+          --chakra-ring-offset-color: #fff;
+          --chakra-ring-color: rgba(66, 153, 225, 0.6);
+          --chakra-ring-offset-shadow: 0 0 #0000;
+          --chakra-ring-shadow: 0 0 #0000;
+          --chakra-space-x-reverse: 0;
+          --chakra-space-y-reverse: 0;
+          --chakra-colors-transparent: transparent;
+          --chakra-colors-current: currentColor;
+          --chakra-colors-black: #000000;
+          --chakra-colors-white: #ffffff;
+          --chakra-colors-whiteAlpha-50: rgba(255, 255, 255, 0.04);
+          --chakra-colors-whiteAlpha-100: rgba(255, 255, 255, 0.06);
+          --chakra-colors-whiteAlpha-200: rgba(255, 255, 255, 0.08);
+          --chakra-colors-whiteAlpha-300: rgba(255, 255, 255, 0.16);
+          --chakra-colors-whiteAlpha-400: rgba(255, 255, 255, 0.24);
+          --chakra-colors-whiteAlpha-500: rgba(255, 255, 255, 0.36);
+          --chakra-colors-whiteAlpha-600: rgba(255, 255, 255, 0.48);
+          --chakra-colors-whiteAlpha-700: rgba(255, 255, 255, 0.64);
+          --chakra-colors-whiteAlpha-800: rgba(255, 255, 255, 0.8);
+          --chakra-colors-whiteAlpha-900: rgba(255, 255, 255, 0.92);
+          --chakra-colors-blackAlpha-50: rgba(0, 0, 0, 0.04);
+          --chakra-colors-blackAlpha-100: rgba(0, 0, 0, 0.06);
+          --chakra-colors-blackAlpha-200: rgba(0, 0, 0, 0.08);
+          --chakra-colors-blackAlpha-300: rgba(0, 0, 0, 0.16);
+          --chakra-colors-blackAlpha-400: rgba(0, 0, 0, 0.24);
+          --chakra-colors-blackAlpha-500: rgba(0, 0, 0, 0.36);
+          --chakra-colors-blackAlpha-600: rgba(0, 0, 0, 0.48);
+          --chakra-colors-blackAlpha-700: rgba(0, 0, 0, 0.64);
+          --chakra-colors-blackAlpha-800: rgba(0, 0, 0, 0.8);
+          --chakra-colors-blackAlpha-900: rgba(0, 0, 0, 0.92);
+          --chakra-colors-gray-50: #f6f8fa;
+          --chakra-colors-gray-100: #ebeef2;
+          --chakra-colors-gray-200: #dadce0;
+          --chakra-colors-gray-300: #b8bdc2;
+          --chakra-colors-gray-400: #adadae;
+          --chakra-colors-gray-500: #9a9b9c;
+          --chakra-colors-gray-600: #606a73;
+          --chakra-colors-gray-700: #4c4c4d;
+          --chakra-colors-gray-800: #363b40;
+          --chakra-colors-gray-900: #19191a;
+          --chakra-colors-red-50: #ffe5e6;
+          --chakra-colors-red-100: #ffb8b8;
+          --chakra-colors-red-200: #ff8a8b;
+          --chakra-colors-red-300: #ff6861;
+          --chakra-colors-red-400: #f44037;
+          --chakra-colors-red-500: #d93830;
+          --chakra-colors-red-600: #b71b13;
+          --chakra-colors-red-700: #a60000;
+          --chakra-colors-red-800: #990000;
+          --chakra-colors-red-900: #8c0000;
+          --chakra-colors-orange-50: #fff7e5;
+          --chakra-colors-orange-100: #ffe9b8;
+          --chakra-colors-orange-200: #ffdb8a;
+          --chakra-colors-orange-300: #ffcd5c;
+          --chakra-colors-orange-400: #ffbf2e;
+          --chakra-colors-orange-500: #ffb202;
+          --chakra-colors-orange-600: #fa9800;
+          --chakra-colors-orange-700: #e68a00;
+          --chakra-colors-orange-800: #d98200;
+          --chakra-colors-orange-900: #cc7a00;
+          --chakra-colors-yellow-50: #fffff0;
+          --chakra-colors-yellow-100: #fefcbf;
+          --chakra-colors-yellow-200: #faf089;
+          --chakra-colors-yellow-300: #f6e05e;
+          --chakra-colors-yellow-400: #ecc94b;
+          --chakra-colors-yellow-500: #d69e2e;
+          --chakra-colors-yellow-600: #b7791f;
+          --chakra-colors-yellow-700: #975a16;
+          --chakra-colors-yellow-800: #744210;
+          --chakra-colors-yellow-900: #5f370e;
+          --chakra-colors-green-50: #f0fff0;
+          --chakra-colors-green-100: #dcf5c4;
+          --chakra-colors-green-200: #c0e69a;
+          --chakra-colors-green-300: #a1d46a;
+          --chakra-colors-green-400: #6dba1a;
+          --chakra-colors-green-500: #64a918;
+          --chakra-colors-green-600: #548300;
+          --chakra-colors-green-700: #457300;
+          --chakra-colors-green-800: #406110;
+          --chakra-colors-green-900: #35520b;
+          --chakra-colors-teal-50: #e6fffa;
+          --chakra-colors-teal-100: #b2f5ea;
+          --chakra-colors-teal-200: #81e6d9;
+          --chakra-colors-teal-300: #4fd1c5;
+          --chakra-colors-teal-400: #38b2ac;
+          --chakra-colors-teal-500: #319795;
+          --chakra-colors-teal-600: #2c7a7b;
+          --chakra-colors-teal-700: #285e61;
+          --chakra-colors-teal-800: #234e52;
+          --chakra-colors-teal-900: #1d4044;
+          --chakra-colors-blue-50: #f1f7fd;
+          --chakra-colors-blue-100: #e6f2ff;
+          --chakra-colors-blue-200: #8ec4fa;
+          --chakra-colors-blue-300: #62adf9;
+          --chakra-colors-blue-400: #3696f7;
+          --chakra-colors-blue-500: #0b85ff;
+          --chakra-colors-blue-600: #0865c2;
+          --chakra-colors-blue-700: #0c69b0;
+          --chakra-colors-blue-800: #0a5894;
+          --chakra-colors-blue-900: #0a4f80;
+          --chakra-colors-cyan-50: #edfdfd;
+          --chakra-colors-cyan-100: #c4f1f9;
+          --chakra-colors-cyan-200: #9decf9;
+          --chakra-colors-cyan-300: #76e4f7;
+          --chakra-colors-cyan-400: #0bc5ea;
+          --chakra-colors-cyan-500: #00b5d8;
+          --chakra-colors-cyan-600: #00a3c4;
+          --chakra-colors-cyan-700: #0987a0;
+          --chakra-colors-cyan-800: #086f83;
+          --chakra-colors-cyan-900: #065666;
+          --chakra-colors-purple-50: #faf5ff;
+          --chakra-colors-purple-100: #e9d8fd;
+          --chakra-colors-purple-200: #d6bcfa;
+          --chakra-colors-purple-300: #b794f4;
+          --chakra-colors-purple-400: #9f7aea;
+          --chakra-colors-purple-500: #805ad5;
+          --chakra-colors-purple-600: #6b46c1;
+          --chakra-colors-purple-700: #553c9a;
+          --chakra-colors-purple-800: #44337a;
+          --chakra-colors-purple-900: #322659;
+          --chakra-colors-pink-50: #fff5f7;
+          --chakra-colors-pink-100: #fed7e2;
+          --chakra-colors-pink-200: #fbb6ce;
+          --chakra-colors-pink-300: #f687b3;
+          --chakra-colors-pink-400: #ed64a6;
+          --chakra-colors-pink-500: #d53f8c;
+          --chakra-colors-pink-600: #b83280;
+          --chakra-colors-pink-700: #97266d;
+          --chakra-colors-pink-800: #702459;
+          --chakra-colors-pink-900: #521b41;
+          --chakra-colors-linkedin-50: #e8f4f9;
+          --chakra-colors-linkedin-100: #cfedfb;
+          --chakra-colors-linkedin-200: #9bdaf3;
+          --chakra-colors-linkedin-300: #68c7ec;
+          --chakra-colors-linkedin-400: #34b3e4;
+          --chakra-colors-linkedin-500: #00a0dc;
+          --chakra-colors-linkedin-600: #008cc9;
+          --chakra-colors-linkedin-700: #0077b5;
+          --chakra-colors-linkedin-800: #005e93;
+          --chakra-colors-linkedin-900: #004471;
+          --chakra-colors-facebook-50: #e8f4f9;
+          --chakra-colors-facebook-100: #d9dee9;
+          --chakra-colors-facebook-200: #b7c2da;
+          --chakra-colors-facebook-300: #6482c0;
+          --chakra-colors-facebook-400: #4267b2;
+          --chakra-colors-facebook-500: #385898;
+          --chakra-colors-facebook-600: #314e89;
+          --chakra-colors-facebook-700: #29487d;
+          --chakra-colors-facebook-800: #223b67;
+          --chakra-colors-facebook-900: #1e355b;
+          --chakra-colors-messenger-50: #d0e6ff;
+          --chakra-colors-messenger-100: #b9daff;
+          --chakra-colors-messenger-200: #a2cdff;
+          --chakra-colors-messenger-300: #7ab8ff;
+          --chakra-colors-messenger-400: #2e90ff;
+          --chakra-colors-messenger-500: #0078ff;
+          --chakra-colors-messenger-600: #0063d1;
+          --chakra-colors-messenger-700: #0052ac;
+          --chakra-colors-messenger-800: #003c7e;
+          --chakra-colors-messenger-900: #002c5c;
+          --chakra-colors-whatsapp-50: #dffeec;
+          --chakra-colors-whatsapp-100: #b9f5d0;
+          --chakra-colors-whatsapp-200: #90edb3;
+          --chakra-colors-whatsapp-300: #65e495;
+          --chakra-colors-whatsapp-400: #3cdd78;
+          --chakra-colors-whatsapp-500: #22c35e;
+          --chakra-colors-whatsapp-600: #179848;
+          --chakra-colors-whatsapp-700: #0c6c33;
+          --chakra-colors-whatsapp-800: #01421c;
+          --chakra-colors-whatsapp-900: #001803;
+          --chakra-colors-twitter-50: #e5f4fd;
+          --chakra-colors-twitter-100: #c8e9fb;
+          --chakra-colors-twitter-200: #a8dcfa;
+          --chakra-colors-twitter-300: #83cdf7;
+          --chakra-colors-twitter-400: #57bbf5;
+          --chakra-colors-twitter-500: #1da1f2;
+          --chakra-colors-twitter-600: #1a94da;
+          --chakra-colors-twitter-700: #1681bf;
+          --chakra-colors-twitter-800: #136b9e;
+          --chakra-colors-twitter-900: #0d4d71;
+          --chakra-colors-telegram-50: #e3f2f9;
+          --chakra-colors-telegram-100: #c5e4f3;
+          --chakra-colors-telegram-200: #a2d4ec;
+          --chakra-colors-telegram-300: #7ac1e4;
+          --chakra-colors-telegram-400: #47a9da;
+          --chakra-colors-telegram-500: #0088cc;
+          --chakra-colors-telegram-600: #007ab8;
+          --chakra-colors-telegram-700: #006ba1;
+          --chakra-colors-telegram-800: #005885;
+          --chakra-colors-telegram-900: #003f5e;
+          --chakra-colors-irisBlue-50: #f5f7fa;
+          --chakra-colors-irisBlue-100: #d9e1ec;
+          --chakra-colors-irisBlue-200: #b9c7dc;
+          --chakra-colors-irisBlue-300: #91a7c8;
+          --chakra-colors-irisBlue-400: #7b96bd;
+          --chakra-colors-irisBlue-500: #5e7eaf;
+          --chakra-colors-irisBlue-600: #4c6a98;
+          --chakra-colors-irisBlue-700: #3d557a;
+          --chakra-colors-irisBlue-800: #334867;
+          --chakra-colors-irisBlue-900: #25344a;
+          --chakra-colors-movingInventory-50: #e8eeff;
+          --chakra-colors-movingInventory-100: #c0cdf5;
+          --chakra-colors-movingInventory-200: #98ace8;
+          --chakra-colors-movingInventory-300: #708bdc;
+          --chakra-colors-movingInventory-400: #486ad1;
+          --chakra-colors-movingInventory-500: #2e51b7;
+          --chakra-colors-movingInventory-600: #233f8f;
+          --chakra-colors-movingInventory-700: #172d68;
+          --chakra-colors-movingInventory-800: #0a1b41;
+          --chakra-colors-movingInventory-900: #01091b;
+          --chakra-borders-none: 0;
+          --chakra-borders-1px: 1px solid;
+          --chakra-borders-2px: 2px solid;
+          --chakra-borders-4px: 4px solid;
+          --chakra-borders-8px: 8px solid;
+          --chakra-fonts-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Symbol';
+          --chakra-fonts-body: -apple-system, BlinkMacSystemFont, Arial,
+          'Segoe UI', Helvetica, sans-serif, 'Apple Color Emoji',
+          'Segoe UI Emoji', 'Segoe UI Symbol';
+          --chakra-fonts-mono: SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', 'Courier New', monospace;
+          --chakra-fontSizes-3xs: 0.45rem;
+          --chakra-fontSizes-2xs: 0.625rem;
+          --chakra-fontSizes-xs: 0.75rem;
+          --chakra-fontSizes-sm: 0.875rem;
+          --chakra-fontSizes-md: 1rem;
+          --chakra-fontSizes-lg: 1.125rem;
+          --chakra-fontSizes-xl: 1.25rem;
+          --chakra-fontSizes-2xl: 1.5rem;
+          --chakra-fontSizes-3xl: 1.875rem;
+          --chakra-fontSizes-4xl: 2.25rem;
+          --chakra-fontSizes-5xl: 3rem;
+          --chakra-fontSizes-6xl: 3.75rem;
+          --chakra-fontSizes-7xl: 4.5rem;
+          --chakra-fontSizes-8xl: 6rem;
+          --chakra-fontSizes-9xl: 8rem;
+          --chakra-fontWeights-hairline: 100;
+          --chakra-fontWeights-thin: 200;
+          --chakra-fontWeights-light: 300;
+          --chakra-fontWeights-normal: 400;
+          --chakra-fontWeights-medium: 500;
+          --chakra-fontWeights-semibold: 600;
+          --chakra-fontWeights-bold: 700;
+          --chakra-fontWeights-extrabold: 800;
+          --chakra-fontWeights-black: 900;
+          --chakra-letterSpacings-tighter: -0.05em;
+          --chakra-letterSpacings-tight: -0.025em;
+          --chakra-letterSpacings-normal: 0;
+          --chakra-letterSpacings-wide: 0.025em;
+          --chakra-letterSpacings-wider: 0.05em;
+          --chakra-letterSpacings-widest: 0.1em;
+          --chakra-lineHeights-3: 0.75rem;
+          --chakra-lineHeights-4: 1rem;
+          --chakra-lineHeights-5: 1.25rem;
+          --chakra-lineHeights-6: 1.5rem;
+          --chakra-lineHeights-7: 1.75rem;
+          --chakra-lineHeights-8: 2rem;
+          --chakra-lineHeights-9: 2.25rem;
+          --chakra-lineHeights-10: 2.5rem;
+          --chakra-lineHeights-normal: normal;
+          --chakra-lineHeights-none: 1;
+          --chakra-lineHeights-shorter: 1.25;
+          --chakra-lineHeights-short: 1.375;
+          --chakra-lineHeights-base: 1.5;
+          --chakra-lineHeights-tall: 1.625;
+          --chakra-lineHeights-taller: 2;
+          --chakra-radii-none: 0;
+          --chakra-radii-sm: 0.125rem;
+          --chakra-radii-base: 0.25rem;
+          --chakra-radii-md: 0.375rem;
+          --chakra-radii-lg: 0.5rem;
+          --chakra-radii-xl: 0.75rem;
+          --chakra-radii-2xl: 1rem;
+          --chakra-radii-3xl: 1.5rem;
+          --chakra-radii-full: 9999px;
+          --chakra-space-1: 0.25rem;
+          --chakra-space-2: 0.5rem;
+          --chakra-space-3: 0.75rem;
+          --chakra-space-4: 1rem;
+          --chakra-space-5: 1.25rem;
+          --chakra-space-6: 1.5rem;
+          --chakra-space-7: 1.75rem;
+          --chakra-space-8: 2rem;
+          --chakra-space-9: 2.25rem;
+          --chakra-space-10: 2.5rem;
+          --chakra-space-12: 3rem;
+          --chakra-space-14: 3.5rem;
+          --chakra-space-16: 4rem;
+          --chakra-space-20: 5rem;
+          --chakra-space-24: 6rem;
+          --chakra-space-28: 7rem;
+          --chakra-space-32: 8rem;
+          --chakra-space-36: 9rem;
+          --chakra-space-40: 10rem;
+          --chakra-space-44: 11rem;
+          --chakra-space-48: 12rem;
+          --chakra-space-52: 13rem;
+          --chakra-space-56: 14rem;
+          --chakra-space-60: 15rem;
+          --chakra-space-64: 16rem;
+          --chakra-space-72: 18rem;
+          --chakra-space-80: 20rem;
+          --chakra-space-96: 24rem;
+          --chakra-space-px: 1px;
+          --chakra-space-0-5: 0.125rem;
+          --chakra-space-1-5: 0.375rem;
+          --chakra-space-2-5: 0.625rem;
+          --chakra-space-3-5: 0.875rem;
+          --chakra-shadows-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
+          --chakra-shadows-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          --chakra-shadows-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+          0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          --chakra-shadows-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          --chakra-shadows-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          --chakra-shadows-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          --chakra-shadows-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          --chakra-shadows-outline: 0 0 0 3px rgba(66, 153, 225, 0.6);
+          --chakra-shadows-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+          --chakra-shadows-none: none;
+          --chakra-shadows-dark-lg: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,
+          rgba(0, 0, 0, 0.2) 0px 5px 10px, rgba(0, 0, 0, 0.4) 0px 15px 40px;
+          --chakra-sizes-1: 0.25rem;
+          --chakra-sizes-2: 0.5rem;
+          --chakra-sizes-3: 0.75rem;
+          --chakra-sizes-4: 1rem;
+          --chakra-sizes-5: 1.25rem;
+          --chakra-sizes-6: 1.5rem;
+          --chakra-sizes-7: 1.75rem;
+          --chakra-sizes-8: 2rem;
+          --chakra-sizes-9: 2.25rem;
+          --chakra-sizes-10: 2.5rem;
+          --chakra-sizes-12: 3rem;
+          --chakra-sizes-14: 3.5rem;
+          --chakra-sizes-16: 4rem;
+          --chakra-sizes-20: 5rem;
+          --chakra-sizes-24: 6rem;
+          --chakra-sizes-28: 7rem;
+          --chakra-sizes-32: 8rem;
+          --chakra-sizes-36: 9rem;
+          --chakra-sizes-40: 10rem;
+          --chakra-sizes-44: 11rem;
+          --chakra-sizes-48: 12rem;
+          --chakra-sizes-52: 13rem;
+          --chakra-sizes-56: 14rem;
+          --chakra-sizes-60: 15rem;
+          --chakra-sizes-64: 16rem;
+          --chakra-sizes-72: 18rem;
+          --chakra-sizes-80: 20rem;
+          --chakra-sizes-96: 24rem;
+          --chakra-sizes-px: 1px;
+          --chakra-sizes-0-5: 0.125rem;
+          --chakra-sizes-1-5: 0.375rem;
+          --chakra-sizes-2-5: 0.625rem;
+          --chakra-sizes-3-5: 0.875rem;
+          --chakra-sizes-max: max-content;
+          --chakra-sizes-min: min-content;
+          --chakra-sizes-full: 100%;
+          --chakra-sizes-3xs: 14rem;
+          --chakra-sizes-2xs: 16rem;
+          --chakra-sizes-xs: 20rem;
+          --chakra-sizes-sm: 24rem;
+          --chakra-sizes-md: 28rem;
+          --chakra-sizes-lg: 32rem;
+          --chakra-sizes-xl: 36rem;
+          --chakra-sizes-2xl: 42rem;
+          --chakra-sizes-3xl: 48rem;
+          --chakra-sizes-4xl: 56rem;
+          --chakra-sizes-5xl: 64rem;
+          --chakra-sizes-6xl: 72rem;
+          --chakra-sizes-7xl: 80rem;
+          --chakra-sizes-8xl: 90rem;
+          --chakra-sizes-prose: 60ch;
+          --chakra-sizes-container-sm: 640px;
+          --chakra-sizes-container-md: 768px;
+          --chakra-sizes-container-lg: 1024px;
+          --chakra-sizes-container-xl: 1280px;
+          --chakra-zIndices-hide: -1;
+          --chakra-zIndices-auto: auto;
+          --chakra-zIndices-base: 0;
+          --chakra-zIndices-docked: 10;
+          --chakra-zIndices-dropdown: 1000;
+          --chakra-zIndices-sticky: 1100;
+          --chakra-zIndices-banner: 1200;
+          --chakra-zIndices-overlay: 1300;
+          --chakra-zIndices-modal: 1400;
+          --chakra-zIndices-popover: 1500;
+          --chakra-zIndices-skipLink: 1600;
+          --chakra-zIndices-toast: 1700;
+          --chakra-zIndices-tooltip: 1800;
+          --chakra-transition-property-common: background-color, border-color,
+          color, fill, stroke, opacity, box-shadow, transform;
+          --chakra-transition-property-colors: background-color, border-color,
+          color, fill, stroke;
+          --chakra-transition-property-dimensions: width, height;
+          --chakra-transition-property-position: left, right, top, bottom;
+          --chakra-transition-property-background: background-color,
+          background-image, background-position;
+          --chakra-transition-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+          --chakra-transition-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+          --chakra-transition-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+          --chakra-transition-duration-ultra-fast: 50ms;
+          --chakra-transition-duration-faster: 100ms;
+          --chakra-transition-duration-fast: 150ms;
+          --chakra-transition-duration-normal: 200ms;
+          --chakra-transition-duration-slow: 300ms;
+          --chakra-transition-duration-slower: 400ms;
+          --chakra-transition-duration-ultra-slow: 500ms;
+          --chakra-blur-none: 0;
+          --chakra-blur-sm: 4px;
+          --chakra-blur-base: 8px;
+          --chakra-blur-md: 12px;
+          --chakra-blur-lg: 16px;
+          --chakra-blur-xl: 24px;
+          --chakra-blur-2xl: 40px;
+          --chakra-blur-3xl: 64px;
+          --chakra-breakpoints-base: 0em;
+          --chakra-breakpoints-sm: 480px;
+          --chakra-breakpoints-md: 768px;
+          --chakra-breakpoints-lg: 992px;
+          --chakra-breakpoints-xl: 1280px;
+          --chakra-breakpoints-2xl: 1536px;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      .chakra-ui-light :host:not([data-theme]),
+      .chakra-ui-light :root:not([data-theme]),
+      .chakra-ui-light [data-theme]:not([data-theme]),
+      [data-theme='light'] :host:not([data-theme]),
+      [data-theme='light'] :root:not([data-theme]),
+      [data-theme='light'] [data-theme]:not([data-theme]),
+      :host[data-theme='light'],
+      :root[data-theme='light'],
+      [data-theme][data-theme='light'] {
+          --chakra-colors-chakra-body-text: var(--chakra-colors-gray-800);
+          --chakra-colors-chakra-body-bg: var(--chakra-colors-white);
+          --chakra-colors-chakra-border-color: var(--chakra-colors-gray-200);
+          --chakra-colors-chakra-inverse-text: var(--chakra-colors-white);
+          --chakra-colors-chakra-subtle-bg: var(--chakra-colors-gray-100);
+          --chakra-colors-chakra-subtle-text: var(--chakra-colors-gray-600);
+          --chakra-colors-chakra-placeholder-color: var(--chakra-colors-gray-500);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      .chakra-ui-dark :host:not([data-theme]),
+      .chakra-ui-dark :root:not([data-theme]),
+      .chakra-ui-dark [data-theme]:not([data-theme]),
+      [data-theme='dark'] :host:not([data-theme]),
+      [data-theme='dark'] :root:not([data-theme]),
+      [data-theme='dark'] [data-theme]:not([data-theme]),
+      :host[data-theme='dark'],
+      :root[data-theme='dark'],
+      [data-theme][data-theme='dark'] {
+          --chakra-colors-chakra-body-text: var(--chakra-colors-whiteAlpha-900);
+          --chakra-colors-chakra-body-bg: var(--chakra-colors-gray-800);
+          --chakra-colors-chakra-border-color: var(
+                  --chakra-colors-whiteAlpha-300
+          );
+          --chakra-colors-chakra-inverse-text: var(--chakra-colors-gray-800);
+          --chakra-colors-chakra-subtle-bg: var(--chakra-colors-gray-700);
+          --chakra-colors-chakra-subtle-text: var(--chakra-colors-gray-400);
+          --chakra-colors-chakra-placeholder-color: var(
+                  --chakra-colors-whiteAlpha-400
+          );
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      html {
+          line-height: 1.5;
+          -webkit-text-size-adjust: 100%;
+          font-family: system-ui, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
+          -moz-osx-font-smoothing: grayscale;
+          touch-action: manipulation;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      body {
+          position: relative;
+          min-height: 100%;
+          margin: 0;
+          font-feature-settings: 'kern';
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(*, *::before, *::after) {
+          border-width: 0;
+          border-style: solid;
+          box-sizing: border-box;
+          word-wrap: break-word;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      main {
+          display: block;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      hr {
+          border-top-width: 1px;
+          box-sizing: content-box;
+          height: 0;
+          overflow: visible;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(pre, code, kbd, samp) {
+          font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-size: 1em;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      a {
+          background-color: transparent;
+          color: inherit;
+          -webkit-text-decoration: inherit;
+          text-decoration: inherit;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      abbr[title] {
+          border-bottom: none;
+          -webkit-text-decoration: underline;
+          text-decoration: underline;
+          -webkit-text-decoration: underline dotted;
+          -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(b, strong) {
+          font-weight: bold;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      small {
+          font-size: 80%;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(sub, sup) {
+          font-size: 75%;
+          line-height: 0;
+          position: relative;
+          vertical-align: baseline;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      sub {
+          bottom: -0.25em;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      sup {
+          top: -0.5em;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      img {
+          border-style: none;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(button, input, optgroup, select, textarea) {
+          font-family: inherit;
+          font-size: 100%;
+          line-height: 1.15;
+          margin: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(button, input) {
+          overflow: visible;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(button, select) {
+          text-transform: none;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(
+          button::-moz-focus-inner,
+          [type='button']::-moz-focus-inner,
+          [type='reset']::-moz-focus-inner,
+          [type='submit']::-moz-focus-inner
+        ) {
+          border-style: none;
+          padding: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      fieldset {
+          padding: 0.35em 0.75em 0.625em;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      legend {
+          box-sizing: border-box;
+          color: inherit;
+          display: table;
+          max-width: 100%;
+          padding: 0;
+          white-space: normal;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      progress {
+          vertical-align: baseline;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      textarea {
+          overflow: auto;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where([type='checkbox'], [type='radio']) {
+          box-sizing: border-box;
+          padding: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+          -webkit-appearance: none !important;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      input[type='number'] {
+          -moz-appearance: textfield;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      input[type='search'] {
+          -webkit-appearance: textfield;
+          outline-offset: -2px;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      input[type='search']::-webkit-search-decoration {
+          -webkit-appearance: none !important;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      ::-webkit-file-upload-button {
+          -webkit-appearance: button;
+          font: inherit;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      details {
+          display: block;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      summary {
+          display: -webkit-box;
+          display: -webkit-list-item;
+          display: -ms-list-itembox;
+          display: list-item;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      template {
+          display: none;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      [hidden] {
+          display: none !important;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre) {
+          margin: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      button {
+          background: transparent;
+          padding: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      fieldset {
+          margin: 0;
+          padding: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(ol, ul) {
+          margin: 0;
+          padding: 0;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      textarea {
+          resize: vertical;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(button, [role='button']) {
+          cursor: pointer;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      button::-moz-focus-inner {
+          border: 0 !important;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      table {
+          border-collapse: collapse;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(h1, h2, h3, h4, h5, h6) {
+          font-size: inherit;
+          font-weight: inherit;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(button, input, optgroup, select, textarea) {
+          padding: 0;
+          line-height: inherit;
+          color: inherit;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(img, svg, video, canvas, audio, iframe, embed, object) {
+          display: block;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :where(img, video) {
+          max-width: 100%;
+          height: auto;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      [data-js-focus-visible]
+      :focus:not([data-focus-visible-added]):not(
+          [data-focus-visible-disabled]
+        ) {
+          outline: none;
+          box-shadow: none;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      select::-ms-expand {
+          display: none;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      :root,
+      :host {
+          --chakra-vh: 100vh;
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      @supports (height: -webkit-fill-available) {
+          :root,
+          :host {
+              --chakra-vh: -webkit-fill-available;
+          }
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      @supports (height: -moz-fill-available) {
+          :root,
+          :host {
+              --chakra-vh: -moz-fill-available;
+          }
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      @supports (height: 100dvh) {
+          :root,
+          :host {
+              --chakra-vh: 100dvh;
+          }
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      body {
+          font-family: var(--chakra-fonts-body);
+          color: var(--chakra-colors-chakra-body-text);
+          background: var(--chakra-colors-chakra-body-bg);
+          transition-property: background-color;
+          transition-duration: var(--chakra-transition-duration-normal);
+          line-height: var(--chakra-lineHeights-base);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      *::-webkit-input-placeholder {
+          color: var(--chakra-colors-chakra-placeholder-color);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      *::-moz-placeholder {
+          color: var(--chakra-colors-chakra-placeholder-color);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      *:-ms-input-placeholder {
+          color: var(--chakra-colors-chakra-placeholder-color);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      *::placeholder {
+          color: var(--chakra-colors-chakra-placeholder-color);
+      }
+  </style>
+  <style data-emotion="css-global" data-s="">
+      *,
+      *::before,
+      ::after {
+          border-color: var(--chakra-colors-chakra-border-color);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-s92abg {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          height: 100vh;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-o80492 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          height: 48px;
+          background: #e6e6e6;
+          padding: var(--chakra-space-4);
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          box-shadow: var(--chakra-shadows-base);
+          z-index: 10;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+          .css-o80492 {
+              height: 72px;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-70qvj9 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1hrmq3h {
+          height: var(--chakra-sizes-9);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+          .css-1hrmq3h {
+              margin-right: var(--chakra-space-1);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+          .css-1hrmq3h {
+              height: var(--chakra-sizes-12);
+              margin-right: var(--chakra-space-4);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1hrmq3h marginRight {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-ab2e04 {
+          font-family: var(--chakra-fonts-heading);
+          line-height: 1.33;
+          font-size: var(--chakra-fontSizes-lg);
+          font-weight: 400;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+          .css-ab2e04 {
+              line-height: 1.2;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+          .css-ab2e04 {
+              font-size: 22px;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1no1r1j {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          font-size: var(--chakra-fontSizes-sm);
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1trk5yx {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          vertical-align: top;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-xl71ch {
+          pointer-events: none;
+          -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+          min-width: 0px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-zhz762 {
+          border-radius: var(--chakra-radii-full);
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: var(--chakra-fontWeights-medium);
+          position: relative;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          background: var(--avatar-bg);
+          font-size: var(--avatar-font-size);
+          color: var(--chakra-colors-white);
+          border-color: var(--avatar-border-color);
+          vertical-align: top;
+          width: var(--chakra-sizes-8);
+          height: var(--chakra-sizes-8);
+          --avatar-border-color: var(--chakra-colors-white);
+          margin-right: var(--chakra-space-2);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+          .css-zhz762 {
+              width: var(--chakra-sizes-10);
+              height: var(--chakra-sizes-10);
+              margin-right: var(--chakra-space-3);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-zhz762:not([data-loaded]) {
+          --avatar-bg: var(--chakra-colors-gray-400);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-zhz762:not([data-theme]),
+      [data-theme='dark'] .css-zhz762:not([data-theme]),
+      .css-zhz762[data-theme='dark'] {
+          --avatar-border-color: var(--chakra-colors-gray-800);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-16ite8i {
+          color: #fff;
+          width: 100%;
+          height: 100%;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-3eybhl {
+          --skeleton-start-color: var(--chakra-colors-gray-100);
+          --skeleton-end-color: var(--chakra-colors-gray-400);
+          background: var(--skeleton-start-color);
+          border-color: var(--skeleton-end-color);
+          opacity: 0.7;
+          border-radius: var(--chakra-radii-sm);
+          -webkit-animation: 0.8s linear infinite alternate animation-14pkoxc;
+          animation: 0.8s linear infinite alternate animation-14pkoxc;
+          box-shadow: var(--chakra-shadows-none);
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          cursor: default;
+          color: var(--chakra-colors-transparent);
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          width: var(--chakra-sizes-20);
+          height: var(--chakra-sizes-5);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-3eybhl:not([data-theme]),
+      [data-theme='dark'] .css-3eybhl:not([data-theme]),
+      .css-3eybhl[data-theme='dark'] {
+          --skeleton-start-color: var(--chakra-colors-gray-800);
+          --skeleton-end-color: var(--chakra-colors-gray-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-3eybhl::before,
+      .css-3eybhl::after,
+      .css-3eybhl * {
+          visibility: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-gpwjgt {
+          width: 1em;
+          height: 1em;
+          display: inline-block;
+          line-height: 1em;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          color: var(--chakra-colors-gray-600);
+          font-size: 12px;
+          margin-left: var(--chakra-space-1-5);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1wc866p {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: stretch;
+          -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+          align-items: stretch;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          gap: var(--chakra-space-4);
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          overflow: auto;
+          background: var(--chakra-colors-blue-50);
+          padding-top: var(--chakra-space-4);
+          padding-bottom: var(--chakra-space-6);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-puewdl {
+          -webkit-padding-start: var(--chakra-space-8);
+          padding-inline-start: var(--chakra-space-8);
+          -webkit-padding-end: var(--chakra-space-8);
+          padding-inline-end: var(--chakra-space-8);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1wojjmt {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          height: var(--chakra-sizes-8);
+          margin-bottom: var(--chakra-space-3);
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-k6yef {
+          font-family: var(--chakra-fonts-heading);
+          font-weight: var(--chakra-fontWeights-semibold);
+          line-height: 1.33;
+          font-size: var(--chakra-fontSizes-2xl);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+          .css-k6yef {
+              line-height: 1.2;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-xbdrq6 {
+          --skeleton-start-color: var(--chakra-colors-gray-100);
+          --skeleton-end-color: var(--chakra-colors-gray-400);
+          background: var(--skeleton-start-color);
+          border-color: var(--skeleton-end-color);
+          opacity: 0.7;
+          border-radius: var(--chakra-radii-sm);
+          -webkit-animation: 0.8s linear infinite alternate animation-14pkoxc;
+          animation: 0.8s linear infinite alternate animation-14pkoxc;
+          box-shadow: var(--chakra-shadows-none);
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          cursor: default;
+          color: var(--chakra-colors-transparent);
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          height: 1.2em;
+          width: var(--chakra-sizes-40);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-xbdrq6:not([data-theme]),
+      [data-theme='dark'] .css-xbdrq6:not([data-theme]),
+      .css-xbdrq6[data-theme='dark'] {
+          --skeleton-start-color: var(--chakra-colors-gray-800);
+          --skeleton-end-color: var(--chakra-colors-gray-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-xbdrq6::before,
+      .css-xbdrq6::after,
+      .css-xbdrq6 * {
+          visibility: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1vr0urd {
+          display: grid;
+          grid-gap: 24px 24px;
+          grid-template-rows: 1fr;
+          grid-template-columns: repeat(
+          auto-fit,
+          minmax(var(--app-width), var(--app-width))
+        );
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          --app-width: 240px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 1280px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 1536px) {
+          .css-1vr0urd {
+              -webkit-box-pack: start;
+              -ms-flex-pack: start;
+              -webkit-justify-content: start;
+              justify-content: start;
+              --app-width: 280px;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-bkeomg {
+          border-radius: var(--chakra-radii-lg);
+          border-width: 1px;
+          border-color: var(--chakra-colors-transparent);
+          -webkit-transition: box-shadow 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, background 0.15s ease-in-out;
+          transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out,
+          background 0.15s ease-in-out;
+          margin-bottom: var(--chakra-space-1-5);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-bkeomg:hover,
+      .css-bkeomg[data-hover] {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1e8rbs9 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          width: auto;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          padding: var(--chakra-space-4);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-xzh0i9 {
+          --skeleton-start-color: var(--chakra-colors-gray-100);
+          --skeleton-end-color: var(--chakra-colors-gray-400);
+          background: var(--skeleton-start-color);
+          border-color: var(--skeleton-end-color);
+          opacity: 0.7;
+          border-radius: var(--chakra-radii-xl);
+          -webkit-animation: 0.8s linear infinite alternate animation-14pkoxc;
+          animation: 0.8s linear infinite alternate animation-14pkoxc;
+          box-shadow: var(--chakra-shadows-none);
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          cursor: default;
+          color: var(--chakra-colors-transparent);
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          width: 60px;
+          height: 60px;
+          -webkit-margin-start: var(--chakra-space-1);
+          margin-inline-start: var(--chakra-space-1);
+          -webkit-margin-end: var(--chakra-space-1);
+          margin-inline-end: var(--chakra-space-1);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-xzh0i9:not([data-theme]),
+      [data-theme='dark'] .css-xzh0i9:not([data-theme]),
+      .css-xzh0i9[data-theme='dark'] {
+          --skeleton-start-color: var(--chakra-colors-gray-800);
+          --skeleton-end-color: var(--chakra-colors-gray-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-xzh0i9::before,
+      .css-xzh0i9::after,
+      .css-xzh0i9 * {
+          visibility: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-txgkpf {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          -webkit-margin-start: var(--chakra-space-2);
+          margin-inline-start: var(--chakra-space-2);
+          -webkit-margin-end: var(--chakra-space-2);
+          margin-inline-end: var(--chakra-space-2);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-15j6u0x {
+          font-family: var(--chakra-fonts-heading);
+          font-size: var(--chakra-fontSizes-md);
+          font-weight: 400;
+          line-height: 16px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1oyqih3 {
+          --skeleton-start-color: var(--chakra-colors-gray-100);
+          --skeleton-end-color: var(--chakra-colors-gray-400);
+          background: var(--skeleton-start-color);
+          border-color: var(--skeleton-end-color);
+          opacity: 0.7;
+          border-radius: var(--chakra-radii-sm);
+          -webkit-animation: 0.8s linear infinite alternate animation-14pkoxc;
+          animation: 0.8s linear infinite alternate animation-14pkoxc;
+          box-shadow: var(--chakra-shadows-none);
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          cursor: default;
+          color: var(--chakra-colors-transparent);
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          width: var(--chakra-sizes-28);
+          height: 16px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-1oyqih3:not([data-theme]),
+      [data-theme='dark'] .css-1oyqih3:not([data-theme]),
+      .css-1oyqih3[data-theme='dark'] {
+          --skeleton-start-color: var(--chakra-colors-gray-800);
+          --skeleton-end-color: var(--chakra-colors-gray-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1oyqih3::before,
+      .css-1oyqih3::after,
+      .css-1oyqih3 * {
+          visibility: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ghao5j {
+          font-size: var(--chakra-fontSizes-sm);
+          font-weight: 400;
+          line-height: 16px;
+          margin-top: var(--chakra-space-0-5);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-k46vqt {
+          --skeleton-start-color: var(--chakra-colors-gray-100);
+          --skeleton-end-color: var(--chakra-colors-gray-400);
+          background: var(--skeleton-start-color);
+          border-color: var(--skeleton-end-color);
+          opacity: 0.7;
+          border-radius: var(--chakra-radii-sm);
+          -webkit-animation: 0.8s linear infinite alternate animation-14pkoxc;
+          animation: 0.8s linear infinite alternate animation-14pkoxc;
+          box-shadow: var(--chakra-shadows-none);
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          cursor: default;
+          color: var(--chakra-colors-transparent);
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          width: var(--chakra-sizes-20);
+          height: 16px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-k46vqt:not([data-theme]),
+      [data-theme='dark'] .css-k46vqt:not([data-theme]),
+      .css-k46vqt[data-theme='dark'] {
+          --skeleton-start-color: var(--chakra-colors-gray-800);
+          --skeleton-end-color: var(--chakra-colors-gray-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-k46vqt::before,
+      .css-k46vqt::after,
+      .css-k46vqt * {
+          visibility: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-r6z5ec {
+          z-index: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-wrfnsr {
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          --menu-bg: #fff;
+          --menu-shadow: var(--chakra-shadows-sm);
+          color: inherit;
+          min-width: 140px;
+          padding-top: var(--chakra-space-2);
+          padding-bottom: var(--chakra-space-2);
+          z-index: 1;
+          border-radius: var(--chakra-radii-md);
+          border-width: 1px;
+          background: var(--menu-bg);
+          box-shadow: var(--menu-shadow);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-wrfnsr:not([data-theme]),
+      [data-theme='dark'] .css-wrfnsr:not([data-theme]),
+      .css-wrfnsr[data-theme='dark'] {
+          --menu-bg: var(--chakra-colors-gray-700);
+          --menu-shadow: var(--chakra-shadows-dark-lg);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18esm8n {
+          -webkit-text-decoration: none;
+          text-decoration: none;
+          color: inherit;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          width: 100%;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          text-align: start;
+          -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          padding-top: var(--chakra-space-1-5);
+          padding-bottom: var(--chakra-space-1-5);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          transition-property: var(--chakra-transition-property-background);
+          transition-duration: var(--chakra-transition-duration-ultra-fast);
+          transition-timing-function: var(--chakra-transition-easing-ease-in);
+          background: var(--menu-bg);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18esm8n:focus,
+      .css-18esm8n[data-focus] {
+          --menu-bg: var(--chakra-colors-gray-100);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-18esm8n:focus:not([data-theme]),
+      .chakra-ui-dark .css-18esm8n[data-focus]:not([data-theme]),
+      [data-theme='dark'] .css-18esm8n:focus:not([data-theme]),
+      [data-theme='dark'] .css-18esm8n[data-focus]:not([data-theme]),
+      .css-18esm8n:focus[data-theme='dark'],
+      .css-18esm8n[data-focus][data-theme='dark'] {
+          --menu-bg: var(--chakra-colors-whiteAlpha-100);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18esm8n:active,
+      .css-18esm8n[data-active] {
+          --menu-bg: var(--chakra-colors-gray-200);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-18esm8n:active:not([data-theme]),
+      .chakra-ui-dark .css-18esm8n[data-active]:not([data-theme]),
+      [data-theme='dark'] .css-18esm8n:active:not([data-theme]),
+      [data-theme='dark'] .css-18esm8n[data-active]:not([data-theme]),
+      .css-18esm8n:active[data-theme='dark'],
+      .css-18esm8n[data-active][data-theme='dark'] {
+          --menu-bg: var(--chakra-colors-whiteAlpha-200);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18esm8n[aria-expanded='true'],
+      .css-18esm8n[data-expanded] {
+          --menu-bg: var(--chakra-colors-gray-100);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-18esm8n[aria-expanded='true']:not([data-theme]),
+      .chakra-ui-dark .css-18esm8n[data-expanded]:not([data-theme]),
+      [data-theme='dark'] .css-18esm8n[aria-expanded='true']:not([data-theme]),
+      [data-theme='dark'] .css-18esm8n[data-expanded]:not([data-theme]),
+      .css-18esm8n[aria-expanded='true'][data-theme='dark'],
+      .css-18esm8n[data-expanded][data-theme='dark'] {
+          --menu-bg: var(--chakra-colors-whiteAlpha-100);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18esm8n:disabled,
+      .css-18esm8n[disabled],
+      .css-18esm8n[aria-disabled='true'],
+      .css-18esm8n[data-disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1mybn36 {
+          -webkit-padding-start: var(--chakra-space-8);
+          padding-inline-start: var(--chakra-space-8);
+          -webkit-padding-end: var(--chakra-space-8);
+          padding-inline-end: var(--chakra-space-8);
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-c40tdp {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-padding-start: var(--chakra-space-8);
+          padding-inline-start: var(--chakra-space-8);
+          -webkit-padding-end: var(--chakra-space-8);
+          padding-inline-end: var(--chakra-space-8);
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-xrb5mh {
+          display: grid;
+          grid-gap: var(--widget-spacing);
+          grid-template-rows: minmax(var(--widget-min-height), 1fr);
+          grid-template-columns: repeat(
+          auto-fill,
+          minmax(var(--widget-min-width), 1fr)
+        );
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          position: relative;
+          --widget-min-width: 600px;
+          --widget-min-height: 360px;
+          --widget-spacing: 24px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 1280px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 1536px) {
+          .css-xrb5mh {
+              --widget-min-width: 720px;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-198i3cw {
+          height: 360px;
+          min-width: 600px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 992px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 1280px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 1536px) {
+          .css-198i3cw {
+              min-width: 720px;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-198i3cw.open {
+          width: 100%;
+          height: calc(100% - 72px);
+          top: 0px;
+          left: 0px;
+          position: fixed;
+          margin-top: 72px;
+          padding: var(--chakra-space-4);
+          z-index: 101;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1sk51cn {
+          position: relative;
+          height: 100%;
+          width: 100%;
+          background: var(--chakra-colors-white);
+          border-radius: var(--chakra-radii-lg);
+          z-index: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1suzq38 {
+          position: absolute;
+          right: var(--chakra-space-2);
+          top: var(--chakra-space-2);
+          z-index: 100;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1suzq38 transition {
+          type: spring;
+          stiffness: 300px;
+          damping: 35px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-i7uc1k {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          position: relative;
+          white-space: nowrap;
+          vertical-align: middle;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          line-height: 1.2;
+          border-radius: var(--chakra-radii-sm);
+          font-weight: var(--chakra-fontWeights-normal);
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          height: var(--chakra-sizes-8);
+          min-width: var(--chakra-sizes-8);
+          font-size: var(--chakra-fontSizes-sm);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          background: var(--chakra-colors-transparent);
+          color: var(--chakra-colors-gray-800);
+          padding: 0px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-i7uc1k:focus-visible,
+      .css-i7uc1k[data-focus-visible] {
+          box-shadow: var(--chakra-shadows-outline);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-i7uc1k:disabled,
+      .css-i7uc1k[disabled],
+      .css-i7uc1k[aria-disabled='true'],
+      .css-i7uc1k[data-disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+          box-shadow: var(--chakra-shadows-none);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-i7uc1k:hover,
+      .css-i7uc1k[data-hover] {
+          color: var(--chakra-colors-blue-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-i7uc1k:hover:disabled,
+      .css-i7uc1k[data-hover]:disabled,
+      .css-i7uc1k:hover[disabled],
+      .css-i7uc1k[data-hover][disabled],
+      .css-i7uc1k:hover[aria-disabled='true'],
+      .css-i7uc1k[data-hover][aria-disabled='true'],
+      .css-i7uc1k:hover[data-disabled],
+      .css-i7uc1k[data-hover][data-disabled] {
+          background: initial;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1g4yje1 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          height: 100%;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-0 {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-vpa14n {
+          font-family: var(--chakra-fonts-heading);
+          font-weight: var(--chakra-fontWeights-semibold);
+          line-height: 1.33;
+          -webkit-padding-start: var(--chakra-space-4);
+          padding-inline-start: var(--chakra-space-4);
+          -webkit-padding-end: var(--chakra-space-4);
+          padding-inline-end: var(--chakra-space-4);
+          padding-top: var(--chakra-space-3);
+          padding-bottom: var(--chakra-space-3);
+          font-size: var(--chakra-fontSizes-xl);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+          .css-vpa14n {
+              line-height: 1.2;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-3kl7hr {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          -webkit-padding-start: var(--chakra-space-4);
+          padding-inline-start: var(--chakra-space-4);
+          -webkit-padding-end: var(--chakra-space-4);
+          padding-inline-end: var(--chakra-space-4);
+          padding-bottom: var(--chakra-space-4);
+          position: relative;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-qckti6 {
+          display: grid;
+          grid-row-gap: var(--chakra-space-4);
+          grid-column-gap: var(--chakra-space-4);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          height: 100%;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1o4iam5 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: stretch;
+          -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+          align-items: stretch;
+          -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+          -webkit-justify-content: space-evenly;
+          justify-content: space-evenly;
+          -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          gap: var(--chakra-space-8);
+          border-radius: var(--chakra-radii-lg);
+          padding: var(--chakra-space-4);
+          background: var(--chakra-colors-gray-50);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1vhuw06 {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          max-width: 480px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-dydzkg {
+          font-family: var(--chakra-fonts-heading);
+          font-weight: var(--chakra-fontWeights-semibold);
+          line-height: 1.33;
+          font-size: var(--chakra-fontSizes-md);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+          .css-dydzkg {
+              line-height: 1.2;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ayfwcb {
+          margin-top: var(--chakra-space-4);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-jgysl3 {
+          --form-label-width: 140px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-ktfa8s {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: stretch;
+          -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+          align-items: stretch;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          gap: var(--chakra-space-3);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-l55e2o {
+          width: 100%;
+          position: relative;
+          --form-label-width: 140px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1l6t78a {
+          display: grid;
+          grid-template-columns: var(--form-label-width, auto) 1fr;
+          gap: var(--chakra-space-3);
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-8hz6dv {
+          display: block;
+          font-size: var(--chakra-fontSizes-sm);
+          margin-bottom: 0px;
+          font-weight: var(--chakra-fontWeights-medium);
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          opacity: 1;
+          font-family: var(--chakra-fonts-heading);
+          -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+          text-align: var(--form-label-align, start);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-8hz6dv:disabled,
+      .css-8hz6dv[disabled],
+      .css-8hz6dv[aria-disabled='true'],
+      .css-8hz6dv[data-disabled] {
+          opacity: 0.4;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1tfjd1n {
+          -webkit-margin-start: var(--chakra-space-1);
+          margin-inline-start: var(--chakra-space-1);
+          --form-control-color: var(--chakra-colors-red-500);
+          color: var(--form-control-color);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-1tfjd1n:not([data-theme]),
+      [data-theme='dark'] .css-1tfjd1n:not([data-theme]),
+      .css-1tfjd1n[data-theme='dark'] {
+          --form-control-color: var(--chakra-colors-red-300);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1rr4qq7 {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-79elbk {
+          position: relative;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1f43avz-a11yText-A11yText {
+          z-index: 9999;
+          border: 0;
+          clip: rect(1px, 1px, 1px, 1px);
+          height: 1px;
+          width: 1px;
+          position: absolute;
+          overflow: hidden;
+          padding: 0;
+          white-space: nowrap;
+      } /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkExMXlUZXh0LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFNSSIsImZpbGUiOiJBMTF5VGV4dC50c3giLCJzb3VyY2VzQ29udGVudCI6WyIvKiogQGpzeCBqc3ggKi9cbmltcG9ydCB7IGpzeCB9IGZyb20gJ0BlbW90aW9uL3JlYWN0JztcblxuLy8gQXNzaXN0aXZlIHRleHQgdG8gZGVzY3JpYmUgdmlzdWFsIGVsZW1lbnRzLiBIaWRkZW4gZm9yIHNpZ2h0ZWQgdXNlcnMuXG5jb25zdCBBMTF5VGV4dCA9IChwcm9wczogSlNYLkludHJpbnNpY0VsZW1lbnRzWydzcGFuJ10pID0+IChcbiAgPHNwYW5cbiAgICBjc3M9e3tcbiAgICAgIGxhYmVsOiAnYTExeVRleHQnLFxuICAgICAgekluZGV4OiA5OTk5LFxuICAgICAgYm9yZGVyOiAwLFxuICAgICAgY2xpcDogJ3JlY3QoMXB4LCAxcHgsIDFweCwgMXB4KScsXG4gICAgICBoZWlnaHQ6IDEsXG4gICAgICB3aWR0aDogMSxcbiAgICAgIHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxuICAgICAgb3ZlcmZsb3c6ICdoaWRkZW4nLFxuICAgICAgcGFkZGluZzogMCxcbiAgICAgIHdoaXRlU3BhY2U6ICdub3dyYXAnLFxuICAgIH19XG4gICAgey4uLnByb3BzfVxuICAvPlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgQTExeVRleHQ7XG4iXX0= */
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ocyf3b {
+          width: 100%;
+          min-width: 0px;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          position: relative;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          font-size: var(--chakra-fontSizes-sm);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          border-radius: var(--chakra-radii-sm);
+          border: 1px solid;
+          border-color: inherit;
+          background: var(--chakra-colors-white);
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+          -webkit-box-flex-wrap: wrap;
+          -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          padding: 0px;
+          overflow: hidden;
+          min-height: var(--chakra-sizes-8);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ocyf3b:disabled,
+      .css-1ocyf3b[disabled],
+      .css-1ocyf3b[aria-disabled='true'],
+      .css-1ocyf3b[data-disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ocyf3b:hover,
+      .css-1ocyf3b[data-hover] {
+          border-color: var(--chakra-colors-gray-300);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ocyf3b[aria-readonly='true'],
+      .css-1ocyf3b[readonly],
+      .css-1ocyf3b[data-readonly] {
+          box-shadow: var(--chakra-shadows-none) !important;
+          -webkit-user-select: all;
+          -moz-user-select: all;
+          -ms-user-select: all;
+          user-select: all;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ocyf3b[aria-invalid='true'],
+      .css-1ocyf3b[data-invalid] {
+          border-color: var(--chakra-colors-red-500);
+          box-shadow: 0 0 0 1px var(--chakra-colors-red-500);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ocyf3b:focus-visible,
+      .css-1ocyf3b[data-focus-visible] {
+          z-index: 1;
+          border-color: var(--chakra-colors-blue-500);
+          box-shadow: 0 0 0 1px var(--chakra-colors-blue-500);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-nb5g1x {
+          display: grid;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          padding-top: 2px;
+          padding-bottom: 2px;
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          -webkit-box-flex-wrap: wrap;
+          -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-overflow-scrolling: touch;
+          position: relative;
+          overflow: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1eohtqe {
+          grid-area: 1/1/2/3;
+          color: var(--chakra-colors-gray-400);
+          -webkit-margin-start: 0.125rem;
+          margin-inline-start: 0.125rem;
+          -webkit-margin-end: 0.125rem;
+          margin-inline-end: 0.125rem;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18euh9p {
+          -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+          display: inline-grid;
+          grid-area: 1/1/2/3;
+          grid-template-columns: 0 min-content;
+          color: inherit;
+          -webkit-margin-start: 0.125rem;
+          margin-inline-start: 0.125rem;
+          -webkit-margin-end: 0.125rem;
+          margin-inline-end: 0.125rem;
+          padding-top: 0.125rem;
+          padding-bottom: 0.125rem;
+          visibility: visible;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-18euh9p::after {
+          content: attr(data-value) ' ';
+          visibility: hidden;
+          white-space: pre;
+          padding: 0px;
+          grid-area: 1/2;
+          min-width: 2px;
+          border: 0;
+          margin: 0px;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-10wwmqn {
+          background: 0;
+          opacity: 1;
+          width: 100%;
+          grid-area: 1/2;
+          min-width: 2px;
+          border: 0;
+          margin: 0px;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          padding: 0px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-hfbj6y {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-align-self: stretch;
+          -ms-flex-item-align: stretch;
+          align-self: stretch;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1i6c5ox {
+          border: 0;
+          border-color: inherit;
+          border-style: solid;
+          border-left-width: 1px;
+          height: 100%;
+          opacity: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1rbq54o {
+          font-size: 16px;
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          height: 100%;
+          border-radius: 0px;
+          border: 1px solid;
+          border-color: inherit;
+          background: var(--chakra-colors-gray-100);
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          border-width: 0;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-onkibi {
+          width: 1em;
+          height: 1em;
+          display: inline-block;
+          line-height: 1em;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          color: currentColor;
+          vertical-align: middle;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1s1yr6h {
+          width: 100%;
+          min-width: 0px;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          position: relative;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          font-size: var(--chakra-fontSizes-sm);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          height: var(--chakra-sizes-8);
+          border-radius: 0px;
+          border: 1px solid;
+          border-color: inherit;
+          background: var(--chakra-colors-white);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1s1yr6h:disabled,
+      .css-1s1yr6h[disabled],
+      .css-1s1yr6h[aria-disabled='true'],
+      .css-1s1yr6h[data-disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1s1yr6h:hover,
+      .css-1s1yr6h[data-hover] {
+          border-color: var(--chakra-colors-gray-300);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1s1yr6h[aria-readonly='true'],
+      .css-1s1yr6h[readonly],
+      .css-1s1yr6h[data-readonly] {
+          box-shadow: var(--chakra-shadows-none) !important;
+          -webkit-user-select: all;
+          -moz-user-select: all;
+          -ms-user-select: all;
+          user-select: all;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1s1yr6h[aria-invalid='true'],
+      .css-1s1yr6h[data-invalid] {
+          border-color: var(--chakra-colors-red-500);
+          box-shadow: 0 0 0 1px var(--chakra-colors-red-500);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1s1yr6h:focus-visible,
+      .css-1s1yr6h[data-focus-visible] {
+          z-index: 1;
+          border-color: var(--chakra-colors-blue-500);
+          box-shadow: 0 0 0 1px var(--chakra-colors-blue-500);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-gg4vpm {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1nv8ek6 {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          position: relative;
+          white-space: nowrap;
+          vertical-align: baseline;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          line-height: var(--chakra-lineHeights-normal);
+          border-radius: var(--chakra-radii-sm);
+          font-weight: var(--chakra-fontWeights-normal);
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          height: auto;
+          min-width: var(--chakra-sizes-8);
+          font-size: var(--chakra-fontSizes-sm);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          padding: 0px;
+          color: var(--chakra-colors-blue-500);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1nv8ek6:focus-visible,
+      .css-1nv8ek6[data-focus-visible] {
+          box-shadow: var(--chakra-shadows-outline);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1nv8ek6:disabled,
+      .css-1nv8ek6[disabled],
+      .css-1nv8ek6[aria-disabled='true'],
+      .css-1nv8ek6[data-disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+          box-shadow: var(--chakra-shadows-none);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1nv8ek6:hover,
+      .css-1nv8ek6[data-hover] {
+          -webkit-text-decoration: underline;
+          text-decoration: underline;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1nv8ek6:hover:disabled,
+      .css-1nv8ek6[data-hover]:disabled,
+      .css-1nv8ek6:hover[disabled],
+      .css-1nv8ek6[data-hover][disabled],
+      .css-1nv8ek6:hover[aria-disabled='true'],
+      .css-1nv8ek6[data-hover][aria-disabled='true'],
+      .css-1nv8ek6:hover[data-disabled],
+      .css-1nv8ek6[data-hover][data-disabled] {
+          background: initial;
+          -webkit-text-decoration: none;
+          text-decoration: none;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1nv8ek6:active,
+      .css-1nv8ek6[data-active] {
+          color: var(--chakra-colors-blue-700);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5ran72 {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          position: relative;
+          white-space: nowrap;
+          vertical-align: middle;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          line-height: 1.2;
+          border-radius: var(--chakra-radii-sm);
+          font-weight: var(--chakra-fontWeights-normal);
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          height: var(--chakra-sizes-8);
+          min-width: var(--chakra-sizes-8);
+          font-size: var(--chakra-fontSizes-sm);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          background: var(--chakra-colors-blue-500);
+          color: var(--chakra-colors-white);
+          box-shadow: var(--chakra-shadows-sm);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5ran72:focus-visible,
+      .css-5ran72[data-focus-visible] {
+          box-shadow: var(--chakra-shadows-outline);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5ran72:disabled,
+      .css-5ran72[disabled],
+      .css-5ran72[aria-disabled='true'],
+      .css-5ran72[data-disabled] {
+          opacity: 0.4;
+          cursor: not-allowed;
+          box-shadow: var(--chakra-shadows-none);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5ran72:hover,
+      .css-5ran72[data-hover] {
+          background: var(--chakra-colors-blue-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5ran72:hover:disabled,
+      .css-5ran72[data-hover]:disabled,
+      .css-5ran72:hover[disabled],
+      .css-5ran72[data-hover][disabled],
+      .css-5ran72:hover[aria-disabled='true'],
+      .css-5ran72[data-hover][aria-disabled='true'],
+      .css-5ran72:hover[data-disabled],
+      .css-5ran72[data-hover][data-disabled] {
+          background: var(--chakra-colors-blue-500);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5ran72:active,
+      .css-5ran72[data-active] {
+          background: var(--chakra-colors-blue-700);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1iuibeg {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          min-width: 300px;
+          max-width: 480px;
+          padding: var(--chakra-space-4);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1we02eq {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          gap: var(--chakra-space-3);
+          -webkit-padding-start: var(--chakra-space-4);
+          padding-inline-start: var(--chakra-space-4);
+          -webkit-padding-end: var(--chakra-space-4);
+          padding-inline-end: var(--chakra-space-4);
+          margin-top: var(--chakra-space-6);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1v75h3j {
+          padding-top: var(--chakra-space-3);
+          padding-bottom: var(--chakra-space-3);
+          -webkit-padding-start: var(--chakra-space-2);
+          padding-inline-start: var(--chakra-space-2);
+          -webkit-padding-end: var(--chakra-space-2);
+          padding-inline-end: var(--chakra-space-2);
+          min-width: 180px;
+          min-height: 72px;
+          text-align: center;
+          background: var(--chakra-colors-red-300);
+          color: var(--chakra-colors-white);
+          border-radius: var(--chakra-radii-md);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-a2ekl1 {
+          font-size: var(--chakra-fontSizes-2xl);
+          font-family: var(--chakra-fonts-heading);
+          font-weight: 500;
+          line-height: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-bqwnae {
+          font-size: var(--chakra-fontSizes-xs);
+          margin-top: var(--chakra-space-1);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1xgjufw {
+          padding-top: var(--chakra-space-3);
+          padding-bottom: var(--chakra-space-3);
+          -webkit-padding-start: var(--chakra-space-2);
+          padding-inline-start: var(--chakra-space-2);
+          -webkit-padding-end: var(--chakra-space-2);
+          padding-inline-end: var(--chakra-space-2);
+          min-width: 180px;
+          min-height: 72px;
+          text-align: center;
+          background: var(--chakra-colors-orange-300);
+          color: var(--chakra-colors-white);
+          border-radius: var(--chakra-radii-md);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-yr7rp8 {
+          display: grid;
+          grid-row-gap: var(--chakra-space-4);
+          grid-column-gap: var(--chakra-space-4);
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+          height: 100%;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-h94677 {
+          padding: var(--chakra-space-4);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1wlbiwp {
+          font-family: var(--chakra-fonts-heading);
+          font-weight: var(--chakra-fontWeights-semibold);
+          line-height: 1.33;
+          font-size: var(--chakra-fontSizes-md);
+          text-align: center;
+          margin-bottom: var(--chakra-space-6);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 480px) {
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @media screen and (min-width: 768px) {
+          .css-1wlbiwp {
+              line-height: 1.2;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-c67lzo {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: space-around;
+          -ms-flex-pack: space-around;
+          -webkit-justify-content: space-around;
+          justify-content: space-around;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-2us7gm {
+          padding-top: var(--chakra-space-3);
+          padding-bottom: var(--chakra-space-3);
+          -webkit-padding-start: var(--chakra-space-4);
+          padding-inline-start: var(--chakra-space-4);
+          -webkit-padding-end: var(--chakra-space-4);
+          padding-inline-end: var(--chakra-space-4);
+          min-width: 120px;
+          max-width: 180px;
+          width: 100%;
+          min-height: 96px;
+          border-radius: var(--chakra-radii-md);
+          background: var(--chakra-colors-movingInventory-100);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-92ucc9 {
+          margin-bottom: var(--chakra-space-1);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1pahln7 {
+          font-size: var(--chakra-fontSizes-sm);
+          color: var(--chakra-colors-gray-600);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-gqxsmn {
+          --skeleton-start-color: #98ace8;
+          --skeleton-end-color: #c0cdf5;
+          background: var(--skeleton-start-color);
+          border-color: var(--skeleton-end-color);
+          opacity: 0.7;
+          border-radius: var(--chakra-radii-sm);
+          -webkit-animation: 0.8s linear infinite alternate animation-14pkoxc;
+          animation: 0.8s linear infinite alternate animation-14pkoxc;
+          box-shadow: var(--chakra-shadows-none);
+          -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+          cursor: default;
+          color: var(--chakra-colors-transparent);
+          pointer-events: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-gqxsmn:not([data-theme]),
+      [data-theme='dark'] .css-gqxsmn:not([data-theme]),
+      .css-gqxsmn[data-theme='dark'] {
+          --skeleton-start-color: #98ace8;
+          --skeleton-end-color: #c0cdf5;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-gqxsmn::before,
+      .css-gqxsmn::after,
+      .css-gqxsmn * {
+          visibility: hidden;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-14pkoxc {
+          from {
+              border-color: var(--skeleton-start-color);
+              background: var(--skeleton-start-color);
+          }
+          to {
+              border-color: var(--skeleton-end-color);
+              background: var(--skeleton-end-color);
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-8amiwb {
+          font-size: var(--chakra-fontSizes-4xl);
+          font-weight: 600;
+          line-height: 1.25;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-3a5bz2 {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: var(--chakra-radii-full);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1lx6me {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          appearance: none;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          transition-property: var(--chakra-transition-property-common);
+          transition-duration: var(--chakra-transition-duration-normal);
+          -webkit-padding-start: var(--chakra-space-3);
+          padding-inline-start: var(--chakra-space-3);
+          -webkit-padding-end: var(--chakra-space-3);
+          padding-inline-end: var(--chakra-space-3);
+          padding-top: var(--chakra-space-1);
+          padding-bottom: var(--chakra-space-1);
+          font-size: var(--chakra-fontSizes-sm);
+          border-radius: var(--chakra-radii-md);
+          border-width: 1px;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-st8013 {
+          width: 1em;
+          height: 1em;
+          display: inline-block;
+          line-height: 1em;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          color: var(--chakra-colors-gray-600);
+          font-size: 12px;
+          margin-left: var(--chakra-space-1-5);
+          margin-top: var(--chakra-space-0-5);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-5if21o {
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          --menu-bg: #fff;
+          --menu-shadow: var(--chakra-shadows-sm);
+          color: inherit;
+          padding-top: var(--chakra-space-2);
+          padding-bottom: var(--chakra-space-2);
+          z-index: 1;
+          border-radius: var(--chakra-radii-md);
+          border-width: 1px;
+          background: var(--menu-bg);
+          box-shadow: var(--menu-shadow);
+          min-width: 50px;
+          font-size: var(--chakra-fontSizes-sm);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .chakra-ui-dark .css-5if21o:not([data-theme]),
+      [data-theme='dark'] .css-5if21o:not([data-theme]),
+      .css-5if21o[data-theme='dark'] {
+          --menu-bg: var(--chakra-colors-gray-700);
+          --menu-shadow: var(--chakra-shadows-dark-lg);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-sfrsz2 {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          font-size: 0.8em;
+          -webkit-margin-end: 0.75rem;
+          margin-inline-end: 0.75rem;
+          opacity: 1;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-n6hvge {
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-flex-shrink: 0;
+          -ms-flex-negative: 0;
+          flex-shrink: 0;
+          font-size: 0.8em;
+          -webkit-margin-end: 0.75rem;
+          margin-inline-end: 0.75rem;
+          opacity: 0;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ah7xsc {
+          border-radius: var(--chakra-radii-lg);
+          border-width: 1px;
+          border-color: var(--chakra-colors-transparent);
+          cursor: pointer;
+          -webkit-transition: box-shadow 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, background 0.15s ease-in-out;
+          transition: box-shadow 0.15s ease-in-out, border-color 0.15s ease-in-out,
+          background 0.15s ease-in-out;
+          margin-bottom: var(--chakra-space-1-5);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-1ah7xsc:hover,
+      .css-1ah7xsc[data-hover] {
+          background: var(--chakra-colors-white);
+          border-color: var(--chakra-colors-white);
+          box-shadow: var(--chakra-shadows-md);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-mtdlok {
+          width: 60px;
+          height: 60px;
+          -webkit-margin-start: var(--chakra-space-1);
+          margin-inline-start: var(--chakra-space-1);
+          -webkit-margin-end: var(--chakra-space-1);
+          margin-inline-end: var(--chakra-space-1);
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      .css-ahyunb {
+          -webkit-animation: animation-5j8bii 0.4s;
+          animation: animation-5j8bii 0.4s;
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @-webkit-keyframes animation-5j8bii {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+  </style>
+  <style data-emotion="css" data-s="">
+      @keyframes animation-5j8bii {
+          from {
+              opacity: 0;
+          }
+          to {
+              opacity: 1;
+          }
+      }
+  </style>
+</head>
+<body class="chakra-ui-light">
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root">
+  <div class="css-s92abg">
+    <div class="chakra-stack css-1wc866p">
+      <div class="css-c40tdp">
+        <div class="css-1wojjmt">
+          <h2 class="chakra-heading css-k6yef">Widgets</h2>
+        </div>
+        <div class="css-xrb5mh">
+          <div class="widget-layout-container css-198i3cw">
+            <div class="widget-container css-1sk51cn">
+              <div class="css-1suzq38">
+                <button
+                  type="button"
+                  class="chakra-button css-i7uc1k"
+                  aria-label="Expand"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    aria-hidden="true"
+                    focusable="false"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="widget-layout-container css-198i3cw">
+            <div class="widget-container css-1sk51cn">
+              <div class="css-1suzq38">
+                <button
+                  type="button"
+                  class="chakra-button css-i7uc1k"
+                  aria-label="Expand"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    aria-hidden="true"
+                    focusable="false"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <span id="__chakra_env" hidden=""></span>
 </div>
+</div>
+</body>
+</html>
